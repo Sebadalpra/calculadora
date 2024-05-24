@@ -12,15 +12,16 @@ def dividir(valor_uno: int, valor_dos: int)-> float:
 def multiplicar(valor_uno: int, valor_dos: int)-> int:
     return valor_uno * valor_dos
 
-def factorial(valor_uno: int) -> int:
-    if valor_uno < 0:
+def factorial(valor_factorial: int) -> int:
+    if valor_factorial < 0:
         print("No se puede calcular el factorial de un número negativo.")
+        system("pause")
         return None
-    elif valor_uno == 0 or valor_uno == 1:
+    elif valor_factorial == 0 or valor_factorial == 1:
         return 1
     else:
         fact = 1
-        for i in range(2, valor_uno + 1):
+        for i in range(2, valor_factorial + 1):
             fact *= i
         return fact
 
@@ -42,6 +43,10 @@ def whileOpciones(valor_uno: int, valor_dos: int):
             case "multiplicar" | "4":
                 return multiplicar(valor_uno,valor_dos)
             case "factorial" | "5":
-                return factorial(valor_uno)
+                factorial_uno = factorial(valor_uno)
+                factorial_dos = factorial(valor_dos)
+                return factorial_uno, factorial_dos
+            case _:
+                print("Opción no válida")
 
             
