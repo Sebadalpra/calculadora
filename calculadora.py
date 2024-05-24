@@ -57,15 +57,13 @@ def validar_e_ingresar_numero()-> int:
 while True:
     match menu():
         case "a":
-            numero_uno = validar_e_ingresar_numero()
+            operando_a = validar_e_ingresar_numero()
             primer_paso = True
-            operando_a = numero_uno
             limpiar_pantalla()
         case "b":
             if primer_paso:
-                numero_dos = validar_e_ingresar_numero()
+                operando_b = validar_e_ingresar_numero()
                 segundo_paso = True
-                operando_b = numero_dos
                 limpiar_pantalla()
             else:
                 print("\nDebe ingresar el primer valor\n")
@@ -74,7 +72,7 @@ while True:
         case "c":
             if segundo_paso:
                 submenu()
-                resultado = whileOpciones(numero_uno,numero_dos)
+                resultado = whileOpciones(operando_a,operando_b)
                 limpiar_pantalla()
                 tercer_paso = True
             else:
